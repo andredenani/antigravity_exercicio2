@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>AURA Dental Clinic | Alta Costura do Sorriso & Odontologia Estética</title>
+  <meta name="description" content="Experimente o atendimento VIP e a alta tecnologia de planejamento 3D na clínica odontológica mais exclusiva. Redefina sua autoconfiança e a estética do seu sorriso sob medida.">
+  
+  <!-- Google Fonts: Cormorant Garamond (Serif) & Plus Jakarta Sans (Sans-serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              50: '#fbf8f3',
+              100: '#f4ede1',
+              200: '#e7d8bf',
+              300: '#d7bc95',
+              400: '#c5a880', // Dourado Champanhe Fosco
+              500: '#b29165',
+              600: '#a07d54',
+              700: '#856443',
+              800: '#6c5037',
+              900: '#58412e',
+            },
+            luxury: {
+              bg: '#050505',
+              card: '#0d0d0e',
+              cardHover: '#131316',
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          letterSpacing: {
+            widest: '.2em',
+            luxury: '.15em',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Styles for Luxury Touches -->
+  <style>
+    /* Custom glow effects and scrollbar styling */
+    .glow-radial {
+      background: radial-gradient(circle at 50% 50%, rgba(197, 168, 128, 0.15) 0%, rgba(5, 5, 5, 0) 70%);
+    }
+    .glow-button {
+      box-shadow: 0 0 15px rgba(197, 168, 128, 0.2);
+    }
+    .glow-button:hover {
+      box-shadow: 0 0 25px rgba(197, 168, 128, 0.4);
+    }
+    /* Estilização suave da barra de rolagem */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050505;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c5a880;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b29165;
+    }
+  </style>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-luxury-bg text-zinc-100 font-sans antialiased overflow-x-hidden">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-luxury-bg/85 backdrop-blur-md border-b border-white/5 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex flex-col items-start select-none group">
+        <span class="font-serif text-2xl tracking-widest text-zinc-100 group-hover:text-gold-400 transition-colors duration-500">A U R A</span>
+        <span class="text-[9px] tracking-[0.3em] text-gold-400 uppercase font-light -mt-1">Dental Studio</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-10 text-xs uppercase tracking-widest font-light text-zinc-400">
+        <a href="#tecnologia" class="hover:text-zinc-100 transition-colors duration-300 relative py-2 group">
+          Tecnologia
+          <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-gold-400 transition-all duration-500 group-hover:w-full"></span>
+        </a>
+        <a href="#tratamentos" class="hover:text-zinc-100 transition-colors duration-300 relative py-2 group">
+          Assinatura
+          <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-gold-400 transition-all duration-500 group-hover:w-full"></span>
+        </a>
+        <a href="#especialista" class="hover:text-zinc-100 transition-colors duration-300 relative py-2 group">
+          O Especialista
+          <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-gold-400 transition-all duration-500 group-hover:w-full"></span>
+        </a>
+        <a href="#depoimentos" class="hover:text-zinc-100 transition-colors duration-300 relative py-2 group">
+          Experiência VIP
+          <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-gold-400 transition-all duration-500 group-hover:w-full"></span>
+        </a>
+      </nav>
+
+      <!-- CTA Desktop -->
+      <div class="hidden md:flex items-center">
+        <a href="#agendamento" class="px-6 py-3 border border-gold-400/40 text-gold-400 text-xs uppercase tracking-widest font-light rounded-sm hover:bg-gold-400 hover:text-luxury-bg transition-all duration-500 ease-out hover:border-gold-400">
+          Solicitar Atendimento Exclusivo
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-zinc-100 focus:outline-none" aria-label="Menu">
+        <i data-lucide="menu" class="w-6 h-6 stroke-[1.2]"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden absolute top-24 left-0 w-full bg-luxury-bg border-b border-white/5 py-8 px-6 flex flex-col space-y-6 text-xs uppercase tracking-widest font-light text-zinc-400">
+      <a href="#tecnologia" class="hover:text-zinc-100 py-2 border-b border-white/5 transition-colors">Tecnologia</a>
+      <a href="#tratamentos" class="hover:text-zinc-100 py-2 border-b border-white/5 transition-colors">Assinatura</a>
+      <a href="#especialista" class="hover:text-zinc-100 py-2 border-b border-white/5 transition-colors">O Especialista</a>
+      <a href="#depoimentos" class="hover:text-zinc-100 py-2 border-b border-white/5 transition-colors">Experiência VIP</a>
+      <a href="#agendamento" class="px-6 py-4 border border-gold-400/40 text-gold-400 text-center text-xs uppercase tracking-widest font-light rounded-sm hover:bg-gold-400 hover:text-luxury-bg transition-colors duration-500">
+        Solicitar Atendimento Exclusivo
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-luxury-bg">
+    <!-- Luz Radial / Glow Effect de fundo -->
+    <div class="absolute inset-0 glow-radial pointer-events-none z-0"></div>
+    
+    <!-- Linhas Abstratas de Luxo (SVG sutil no fundo) -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none z-0 flex items-center justify-center">
+      <svg class="w-full h-full max-w-7xl" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-100 900 C300 700, 400 300, 1100 100" stroke="#c5a880" stroke-width="0.5"/>
+        <path d="M-50 950 C400 800, 500 200, 1050 50" stroke="#c5a880" stroke-width="0.5" stroke-dasharray="5 5"/>
+      </svg>
+    </div>
+
+    <!-- Conteúdo do Hero -->
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center flex flex-col items-center justify-center space-y-8 py-20">
+      <!-- Tag / Subtítulo Superior -->
+      <span class="text-[10px] tracking-[0.4em] uppercase text-gold-400 font-light block mb-2 select-none">
+        A Alta Costura do Sorriso
+      </span>
+      
+      <!-- Título Principal Editorial -->
+      <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-zinc-100 tracking-tight leading-[1.1] max-w-4xl">
+        A harmonia que <br class="hidden md:inline">
+        revela sua <span class="font-serif italic font-light text-gold-400">essência única</span>.
+      </h1>
+      
+      <!-- Parágrafo de Suporte -->
+      <p class="font-sans font-light text-zinc-400 text-base md:text-lg lg:text-xl max-w-2xl leading-relaxed tracking-wide">
+        Muito além da estética comum: desenhamos a assinatura do seu sorriso integrando alta precisão digital, sedação e conforto absoluto. Uma experiência criada para quem exige excelência e naturalidade.
+      </p>
+      
+      <!-- CTA Principal & Secundário -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4 w-full sm:w-auto">
+        <a href="#agendamento" class="w-full sm:w-auto px-8 py-4 bg-gold-400 text-luxury-bg text-xs uppercase tracking-widest font-semibold rounded-sm hover:bg-gold-100 glow-button transition-all duration-500 ease-out text-center">
+          Agendar uma Experiência
+        </a>
+        <a href="#tecnologia" class="w-full sm:w-auto px-8 py-4 text-zinc-300 text-xs uppercase tracking-widest font-light hover:text-gold-400 transition-colors duration-500 flex items-center justify-center gap-2 group">
+          Conhecer a Experiência
+          <i data-lucide="arrow-right" class="w-4 h-4 stroke-[1.2] transform group-hover:translate-x-2 transition-transform duration-500"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Indicador de Rolagem Sutil -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center space-y-2 pointer-events-none select-none opacity-60">
+      <span class="text-[9px] tracking-[0.25em] text-zinc-500 uppercase font-light">Deslizar</span>
+      <div class="w-[1px] h-12 bg-gradient-to-b from-gold-400/60 to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- Diferenciais / Tecnologia Section -->
+  <section id="tecnologia" class="py-32 bg-luxury-bg relative overflow-hidden border-t border-white/5">
+    <!-- Efeito luminoso sutil no fundo -->
+    <div class="absolute right-0 top-1/4 w-[500px] h-[500px] bg-gold-400/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Cabeçalho da Seção -->
+      <div class="max-w-3xl mb-24 flex flex-col space-y-4">
+        <span class="text-[10px] tracking-[0.4em] uppercase text-gold-400 font-light">Alta Precisão & Conforto</span>
+        <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-zinc-100 leading-tight">
+          A vanguarda tecnológica a serviço do seu bem-estar.
+        </h2>
+        <p class="font-sans font-light text-zinc-400 text-base md:text-lg leading-relaxed max-w-2xl pt-2">
+          Eliminamos as barreiras do desconforto tradicional. Cada etapa do seu tratamento é projetada digitalmente com precisão submilimétrica e executada sob protocolos de relaxamento total.
+        </p>
+      </div>
+
+      <!-- Grid de Diferenciais -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Diferencial 1: Scanner Intraoral 3D -->
+        <div class="group p-8 md:p-10 bg-luxury-card border border-white/5 rounded-sm flex flex-col space-y-6 hover:bg-luxury-cardHover hover:border-gold-400/30 -translate-y-0 hover:-translate-y-2 transition-all duration-500 ease-out">
+          <div class="w-12 h-12 flex items-center justify-center border border-gold-400/20 text-gold-400 group-hover:border-gold-400 group-hover:bg-gold-400 group-hover:text-luxury-bg transition-all duration-500 rounded-sm">
+            <i data-lucide="scan" class="w-5 h-5 stroke-[1.2]"></i>
+          </div>
+          <h3 class="font-serif text-2xl font-light text-zinc-100 group-hover:text-gold-400 transition-colors duration-500">
+            Scanner Intraoral 3D <span class="block text-sm font-sans uppercase tracking-[0.2em] text-zinc-500 mt-1 font-light">Planejamento Digital</span>
+          </h3>
+          <p class="font-sans font-light text-zinc-400 text-sm leading-relaxed">
+            Esqueça os moldes de gesso desconfortáveis. Criamos uma réplica tridimensional exata da sua arcada em segundos, permitindo simular o resultado final do sorriso antes mesmo do início do tratamento.
+          </p>
+        </div>
+
+        <!-- Diferencial 2: Sedação Consciente -->
+        <div class="group p-8 md:p-10 bg-luxury-card border border-white/5 rounded-sm flex flex-col space-y-6 hover:bg-luxury-cardHover hover:border-gold-400/30 -translate-y-0 hover:-translate-y-2 transition-all duration-500 ease-out">
+          <div class="w-12 h-12 flex items-center justify-center border border-gold-400/20 text-gold-400 group-hover:border-gold-400 group-hover:bg-gold-400 group-hover:text-luxury-bg transition-all duration-500 rounded-sm">
+            <i data-lucide="sparkles" class="w-5 h-5 stroke-[1.2]"></i>
+          </div>
+          <h3 class="font-serif text-2xl font-light text-zinc-100 group-hover:text-gold-400 transition-colors duration-500">
+            Sedação Consciente <span class="block text-sm font-sans uppercase tracking-[0.2em] text-zinc-500 mt-1 font-light">Consulta Sem Dor</span>
+          </h3>
+          <p class="font-sans font-light text-zinc-400 text-sm leading-relaxed">
+            Uma experiência totalmente livre de ansiedade. Sob supervisão médica e com a administração de sedativos leves, você realiza procedimentos complexos em um estado de relaxamento profundo e confortável.
+          </p>
+        </div>
+
+        <!-- Diferencial 3: Laboratório Digital Próprio -->
+        <div class="group p-8 md:p-10 bg-luxury-card border border-white/5 rounded-sm flex flex-col space-y-6 hover:bg-luxury-cardHover hover:border-gold-400/30 -translate-y-0 hover:-translate-y-2 transition-all duration-500 ease-out">
+          <div class="w-12 h-12 flex items-center justify-center border border-gold-400/20 text-gold-400 group-hover:border-gold-400 group-hover:bg-gold-400 group-hover:text-luxury-bg transition-all duration-500 rounded-sm">
+            <i data-lucide="gem" class="w-5 h-5 stroke-[1.2]"></i>
+          </div>
+          <h3 class="font-serif text-2xl font-light text-zinc-100 group-hover:text-gold-400 transition-colors duration-500">
+            Laboratório Digital <span class="block text-sm font-sans uppercase tracking-[0.2em] text-zinc-500 mt-1 font-light">Ateliê de Cerâmica</span>
+          </h3>
+          <p class="font-sans font-light text-zinc-400 text-sm leading-relaxed">
+            Customização artística imediata. Produzimos nossas próprias facetas de porcelana e lentes de contato em impressoras 3D de alta definição, garantindo ajustes minuciosos de cor, forma e translucidez em tempo recorde.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tratamentos de Assinatura Section -->
+  <section id="tratamentos" class="py-32 bg-luxury-bg relative overflow-hidden border-t border-white/5">
+    <!-- Efeitos de luz no fundo -->
+    <div class="absolute left-0 bottom-1/4 w-[600px] h-[600px] bg-gold-400/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Cabeçalho da Seção -->
+      <div class="text-center max-w-3xl mx-auto mb-24 flex flex-col space-y-4">
+        <span class="text-[10px] tracking-[0.4em] uppercase text-gold-400 font-light">Procedimentos Exclusivos</span>
+        <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-zinc-100 leading-tight">
+          Tratamentos de Assinatura
+        </h2>
+        <div class="w-16 h-[1px] bg-gold-400 mx-auto my-2"></div>
+        <p class="font-sans font-light text-zinc-400 text-base md:text-lg leading-relaxed pt-2">
+          Verdadeiras obras de arte criadas para harmonizar com seus traços faciais, proporcionando durabilidade, conforto e naturalidade absoluta.
+        </p>
+      </div>
+
+      <!-- Grid de Tratamentos -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Card 1: Lentes de Contato Premium -->
+        <div class="group relative bg-luxury-card border border-white/5 rounded-sm p-8 flex flex-col justify-between h-[480px] hover:bg-luxury-cardHover hover:border-gold-400/40 transition-all duration-500 ease-out -translate-y-0 hover:-translate-y-3">
+          <div>
+            <!-- Grafismo SVG Minimalista representando as facetas -->
+            <div class="h-28 flex items-center justify-center mb-8 border-b border-white/5 pb-6">
+              <svg class="w-20 h-20 text-gold-400/20 group-hover:text-gold-400/80 transition-colors duration-500" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Desenho geométrico simulando a lente e faceta de porcelana ultrafina -->
+                <path d="M20 35 C35 25, 65 25, 80 35 C85 55, 80 75, 50 85 C20 75, 15 55, 20 35 Z" stroke="currentColor" stroke-width="0.8" />
+                <path d="M30 40 C40 33, 60 33, 70 40 C74 53, 70 68, 50 76 C30 68, 26 53, 30 40 Z" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2" />
+                <circle cx="50" cy="55" r="3" fill="currentColor" class="opacity-40" />
+              </svg>
+            </div>
+            <span class="text-[9px] tracking-widest text-gold-400 uppercase font-light border border-gold-400/30 px-2.5 py-1 rounded-full">Exclusivo</span>
+            <h3 class="font-serif text-3xl font-light text-zinc-100 mt-6 group-hover:text-gold-400 transition-colors duration-500">
+              Lentes de Contato Dental Premium
+            </h3>
+            <p class="font-sans font-light text-zinc-400 text-sm leading-relaxed mt-4">
+              A alta costura do sorriso. Lentes ultrafinas esculpidas de forma personalizada para criar uma harmonia dental impecável, preservando a textura e translucidez naturais dos dentes.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+            <span class="text-[10px] tracking-widest text-zinc-500 uppercase font-light">Customizado</span>
+            <a href="#agendamento" class="text-xs uppercase tracking-widest font-light text-zinc-300 group-hover:text-gold-400 flex items-center gap-1.5 transition-colors duration-500">
+              Saber mais
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 stroke-[1.2] transform group-hover:translate-x-1.5 transition-transform duration-500"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Invisalign Doctor Diamond -->
+        <div class="group relative bg-luxury-card border border-white/5 rounded-sm p-8 flex flex-col justify-between h-[480px] hover:bg-luxury-cardHover hover:border-gold-400/40 transition-all duration-500 ease-out -translate-y-0 hover:-translate-y-3">
+          <div>
+            <!-- Grafismo SVG Minimalista representando Invisalign -->
+            <div class="h-28 flex items-center justify-center mb-8 border-b border-white/5 pb-6">
+              <svg class="w-20 h-20 text-gold-400/20 group-hover:text-gold-400/80 transition-colors duration-500" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Formato elíptico sutil e preciso de alinhadores transparentes -->
+                <path d="M15 45 C25 25, 75 25, 85 45 C75 65, 25 65, 15 45 Z" stroke="currentColor" stroke-width="0.8" />
+                <path d="M22 45 C32 30, 68 30, 78 45 C68 60, 32 60, 22 45 Z" stroke="currentColor" stroke-width="0.5" />
+                <line x1="50" y1="20" x2="50" y2="70" stroke="currentColor" stroke-width="0.5" stroke-dasharray="3 3" />
+              </svg>
+            </div>
+            <span class="text-[9px] tracking-widest text-gold-400 uppercase font-light border border-gold-400/30 px-2.5 py-1 rounded-full">Diamond</span>
+            <h3 class="font-serif text-3xl font-light text-zinc-100 mt-6 group-hover:text-gold-400 transition-colors duration-500">
+              Invisalign Doctor Diamond
+            </h3>
+            <p class="font-sans font-light text-zinc-400 text-sm leading-relaxed mt-4">
+              Ortodontia invisível de alta performance. Planejado por especialistas certificados com nível Diamond, oferecendo máxima previsibilidade e discrição absoluta para o seu dia a dia.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+            <span class="text-[10px] tracking-widest text-zinc-500 uppercase font-light">Tecnologia Smart</span>
+            <a href="#agendamento" class="text-xs uppercase tracking-widest font-light text-zinc-300 group-hover:text-gold-400 flex items-center gap-1.5 transition-colors duration-500">
+              Saber mais
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 stroke-[1.2] transform group-hover:translate-x-1.5 transition-transform duration-500"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: Reabilitação Oral Estética -->
+        <div class="group relative bg-luxury-card border border-white/5 rounded-sm p-8 flex flex-col justify-between h-[480px] hover:bg-luxury-cardHover hover:border-gold-400/40 transition-all duration-500 ease-out -translate-y-0 hover:-translate-y-3">
+          <div>
+            <!-- Grafismo SVG Minimalista representando Reabilitação Estética Integrada -->
+            <div class="h-28 flex items-center justify-center mb-8 border-b border-white/5 pb-6">
+              <svg class="w-20 h-20 text-gold-400/20 group-hover:text-gold-400/80 transition-colors duration-500" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Design geométrico representando harmonia, proporção áurea e engenharia estética -->
+                <circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="0.8" />
+                <rect x="30" y="30" width="40" height="40" stroke="currentColor" stroke-width="0.5" />
+                <line x1="20" y1="20" x2="80" y2="80" stroke="currentColor" stroke-width="0.5" />
+                <line x1="80" y1="20" x2="20" y2="80" stroke="currentColor" stroke-width="0.5" />
+              </svg>
+            </div>
+            <span class="text-[9px] tracking-widest text-gold-400 uppercase font-light border border-gold-400/30 px-2.5 py-1 rounded-full">Integrado</span>
+            <h3 class="font-serif text-3xl font-light text-zinc-100 mt-6 group-hover:text-gold-400 transition-colors duration-500">
+              Reabilitação Oral & Estética Integrada
+            </h3>
+            <p class="font-sans font-light text-zinc-400 text-sm leading-relaxed mt-4">
+              Restaurando a engenharia funcional do sorriso. O encontro perfeito entre a biologia, a reabilitação protética avançada e a análise minuciosa da estética muscular da sua face.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+            <span class="text-[10px] tracking-widest text-zinc-500 uppercase font-light">Completo</span>
+            <a href="#agendamento" class="text-xs uppercase tracking-widest font-light text-zinc-300 group-hover:text-gold-400 flex items-center gap-1.5 transition-colors duration-500">
+              Saber mais
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 stroke-[1.2] transform group-hover:translate-x-1.5 transition-transform duration-500"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre o Especialista Section -->
+  <section id="especialista" class="py-32 bg-luxury-bg relative overflow-hidden border-t border-white/5">
+    <!-- Efeito luminoso de fundo -->
+    <div class="absolute right-0 bottom-0 w-[500px] h-[500px] bg-gold-400/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- Lado da Imagem (5 colunas) -->
+        <div class="lg:col-span-5 relative flex justify-center lg:justify-start">
+          <!-- Moldura decorativa deslocada dourada -->
+          <div class="absolute -bottom-4 -right-4 w-full h-full border border-gold-400/30 rounded-sm pointer-events-none hidden sm:block"></div>
+          
+          <!-- Container da Imagem com efeito hover -->
+          <div class="relative w-full max-w-sm sm:max-w-none aspect-[4/5] bg-zinc-900 overflow-hidden border border-white/10 rounded-sm group">
+            <img src="https://images.unsplash.com/photo-1594824813573-246434de83fb?auto=format&fit=crop&q=80&w=800&h=1000" 
+                 alt="Dra. Helena Cavalcanti" 
+                 class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700 ease-out" />
+            <!-- overlay sutil dourado no hover -->
+            <div class="absolute inset-0 bg-gradient-to-t from-luxury-bg via-transparent to-transparent opacity-60"></div>
+          </div>
+        </div>
+
+        <!-- Lado do Conteúdo (7 colunas) -->
+        <div class="lg:col-span-7 flex flex-col space-y-6">
+          <span class="text-[10px] tracking-[0.4em] uppercase text-gold-400 font-light">A Arte por Trás do Sorriso</span>
+          
+          <h2 class="font-serif text-4xl md:text-5xl font-light text-zinc-100 leading-tight">
+            Dra. Helena Cavalcanti
+          </h2>
+          <span class="text-sm font-sans uppercase tracking-[0.2em] text-gold-400/80 font-light -mt-2">Membro da AACD & Especialista em Estética Orofacial</span>
+          
+          <div class="w-12 h-[1px] bg-gold-400 my-2"></div>
+          
+          <div class="font-sans font-light text-zinc-400 text-sm md:text-base space-y-6 leading-relaxed">
+            <p>
+              Para a Dra. Helena Cavalcanti, cada sorriso não é apenas um procedimento técnico, mas uma escultura biológica personalizada. Com mais de 15 anos de atuação dedicados exclusivamente à reabilitação estética de alta performance, sua filosofia de trabalho é pautada na exclusividade absoluta.
+            </p>
+            <p class="border-l-2 border-gold-400/40 pl-4 italic text-zinc-300 font-light">
+              "Atendemos um único paciente por vez. Sem pressa, sem interrupções. Dedico meu dia a compreender a singularidade de cada face, integrando o planejamento tridimensional à personalidade do paciente para um resultado indetectável e sofisticado."
+            </p>
+            <p>
+              Graduada pela USP com especializações em Munique (Alemanha) e Nova York (Loma Linda University), a Dra. Helena participa frequentemente como palestrante convidada nos principais congressos internacionais de odontologia estética. Sua paixão é traduzir ciência e precisão tecnológica em autoconfiança magnética para seus pacientes.
+            </p>
+          </div>
+
+          <!-- Mini Grid de Credenciais / Ícones de luxo -->
+          <div class="grid grid-cols-2 gap-6 pt-6 border-t border-white/5">
+            <div class="flex items-start space-x-3">
+              <i data-lucide="award" class="w-5 h-5 text-gold-400 stroke-[1.2] mt-0.5"></i>
+              <div>
+                <h4 class="text-xs uppercase tracking-wider text-zinc-200 font-medium">Titulação Internacional</h4>
+                <p class="text-xs text-zinc-500 font-light mt-0.5">Especialização avançada na Alemanha e EUA.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <i data-lucide="shield-check" class="w-5 h-5 text-gold-400 stroke-[1.2] mt-0.5"></i>
+              <div>
+                <h4 class="text-xs uppercase tracking-wider text-zinc-200 font-medium">Atendimento Concierge</h4>
+                <p class="text-xs text-zinc-500 font-light mt-0.5">Dedicação exclusiva de agenda, um por vez.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos (Experiência VIP) Section -->
+  <section id="depoimentos" class="py-32 bg-luxury-bg relative overflow-hidden border-t border-white/5">
+    <!-- Efeito luminoso sutil no fundo -->
+    <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-400/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Cabeçalho da Seção -->
+      <div class="text-center max-w-3xl mx-auto mb-24 flex flex-col space-y-4">
+        <span class="text-[10px] tracking-[0.4em] uppercase text-gold-400 font-light font-sans">Depoimentos</span>
+        <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-zinc-100 leading-tight">
+          A Experiência Aura
+        </h2>
+        <div class="w-16 h-[1px] bg-gold-400 mx-auto my-2"></div>
+        <p class="font-sans font-light text-zinc-400 text-base md:text-lg leading-relaxed pt-2">
+          Relatos daqueles que confiaram no nosso ateliê para desenhar sua assinatura estética com conforto e discrição absoluta.
+        </p>
+      </div>
+
+      <!-- Grid de Depoimentos -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Depoimento 1 -->
+        <div class="group relative bg-luxury-card border border-white/5 rounded-sm p-8 md:p-10 flex flex-col justify-between h-[360px] hover:bg-luxury-cardHover hover:border-gold-400/20 transition-all duration-500">
+          <!-- Ícone Aspas Gigante em Background -->
+          <div class="absolute top-6 right-8 text-gold-400/10 group-hover:text-gold-400/20 transition-colors duration-500 font-serif text-8xl pointer-events-none select-none">“</div>
+          
+          <div class="flex flex-col space-y-6">
+            <!-- Estrelas minimalistas ou tag de luxo -->
+            <div class="flex space-x-1 text-gold-400">
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-current stroke-none"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-current stroke-none"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-current stroke-none"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-current stroke-none"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-current stroke-none"></i>
+            </div>
+            <p class="font-serif italic text-zinc-200 text-lg leading-relaxed font-light">
+              "A experiência superou todas as minhas expectativas. O protocolo de sedação consciente me permitiu realizar a reabilitação com zero desconforto. O resultado é incrivelmente natural."
+            </p>
+          </div>
+          <div>
+            <h4 class="text-xs uppercase tracking-widest text-gold-400 font-medium">Isabella D.</h4>
+            <p class="text-[10px] text-zinc-500 font-light mt-0.5">Empresária e Investidora</p>
+          </div>
+        </div>
+
+        <!-- Depoimento 2 -->
+        <div class="group relative bg-luxury-card border border-white/5 rounded-sm p-8 md:p-10 flex flex-col justify-between h-[360px] hover:bg-luxury-cardHover hover:border-gold-400/20 transition-all duration-500">
+          <div class="absolute top-6 right-8 text-gold-400/10 group-hover:text-gold-400/20 transition-colors duration-500 font-serif text-8xl pointer-events-none select-none">“</div>
+          
+          <div class="flex flex-col space-y-6">
+            <div class="flex space-x-1 text-gold-400">
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-current stroke-none"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-current stroke-none"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-current stroke-none"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-current stroke-none"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-current stroke-none"></i>
+            </div>
+            <p class="font-serif italic text-zinc-200 text-lg leading-relaxed font-light">
+              "O atendimento com hora reservada exclusiva me deu a discrição que eu precisava. O nível tecnológico de planejamento 3D é espetacular. Recomendo sem ressalvas."
+            </p>
+          </div>
+          <div>
+            <h4 class="text-xs uppercase tracking-widest text-gold-400 font-medium">Marcus V.</h4>
+            <p class="text-[10px] text-zinc-500 font-light mt-0.5">Diretor Executivo</p>
+          </div>
+        </div>
+
+        <!-- Depoimento 3 -->
+        <div class="group relative bg-luxury-card border border-white/5 rounded-sm p-8 md:p-10 flex flex-col justify-between h-[360px] hover:bg-luxury-cardHover hover:border-gold-400/20 transition-all duration-500">
+          <div class="absolute top-6 right-8 text-gold-400/10 group-hover:text-gold-400/20 transition-colors duration-500 font-serif text-8xl pointer-events-none select-none">“</div>
+          
+          <div class="flex flex-col space-y-6">
+            <div class="flex space-x-1 text-gold-400">
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-current stroke-none"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-current stroke-none"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-current stroke-none"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-current stroke-none"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-current stroke-none"></i>
+            </div>
+            <p class="font-serif italic text-zinc-200 text-lg leading-relaxed font-light">
+              "Prezo muito pela naturalidade e simetria do rosto. O laboratório próprio permitiu que o técnico e a Dra. Helena ajustassem cada detalhe comigo na cadeira. Um trabalho impecável."
+            </p>
+          </div>
+          <div>
+            <h4 class="text-xs uppercase tracking-widest text-gold-400 font-medium">Beatriz L.</h4>
+            <p class="text-[10px] text-zinc-500 font-light mt-0.5">Arquiteta e Designer</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Solicitação de Atendimento Section -->
+  <section id="agendamento" class="py-32 bg-luxury-bg relative overflow-hidden border-t border-white/5">
+    <!-- Efeito luminoso de fundo -->
+    <div class="absolute right-0 bottom-0 w-[500px] h-[500px] bg-gold-400/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="bg-luxury-card border border-white/5 p-8 md:p-16 rounded-sm relative group transition-all duration-500 hover:border-gold-400/20">
+        <!-- Efeito sutil interno -->
+        <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-gold-400/30 to-transparent"></div>
+
+        <div class="text-center flex flex-col space-y-4 mb-12">
+          <span class="text-[10px] tracking-[0.4em] uppercase text-gold-400 font-light">Escassez & Exclusividade</span>
+          <h2 class="font-serif text-3xl md:text-5xl font-light text-zinc-100 leading-tight">
+            Solicitar Atendimento Exclusivo
+          </h2>
+          <p class="font-sans font-light text-zinc-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+            Devido ao protocolo de dedicarmos agenda exclusiva para um único paciente por vez, nossas vagas mensais são limitadas. Preencha os campos abaixo e nosso concierge entrará em contato.
+          </p>
+        </div>
+
+        <!-- Formulário Minimalista -->
+        <form class="space-y-6 max-w-lg mx-auto" onsubmit="event.preventDefault(); alert('Solicitação enviada. Nosso concierge entrará em contato em breve.');">
+          <div class="relative">
+            <input type="text" id="name" required placeholder="Nome Completo" 
+                   class="w-full bg-transparent border-b border-white/10 py-3 text-zinc-100 placeholder-zinc-500 text-sm focus:outline-none focus:border-gold-400 transition-colors duration-500 font-light" />
+          </div>
+          <div class="relative">
+            <input type="tel" id="phone" required placeholder="WhatsApp ou Telefone" 
+                   class="w-full bg-transparent border-b border-white/10 py-3 text-zinc-100 placeholder-zinc-500 text-sm focus:outline-none focus:border-gold-400 transition-colors duration-500 font-light" />
+          </div>
+          <div class="relative">
+            <textarea id="message" rows="2" placeholder="Procedimento de interesse ou observações (opcional)" 
+                      class="w-full bg-transparent border-b border-white/10 py-3 text-zinc-100 placeholder-zinc-500 text-sm focus:outline-none focus:border-gold-400 transition-colors duration-500 font-light resize-none"></textarea>
+          </div>
+          
+          <div class="pt-6">
+            <button type="submit" class="w-full py-4 bg-gold-400 text-luxury-bg text-xs uppercase tracking-widest font-semibold rounded-sm hover:bg-gold-100 transition-all duration-500 ease-out glow-button">
+              Enviar Solicitação de Experiência
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé (Footer) -->
+  <footer class="bg-luxury-bg border-t border-white/5 pt-20 pb-12 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- Linha Principal do Footer -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16 border-b border-white/5">
+        <!-- Logo e CRO -->
+        <div class="flex flex-col space-y-4">
+          <a href="#" class="flex flex-col items-start select-none group">
+            <span class="font-serif text-2xl tracking-widest text-zinc-100 group-hover:text-gold-400 transition-colors duration-500">A U R A</span>
+            <span class="text-[9px] tracking-[0.3em] text-gold-400 uppercase font-light -mt-1">Dental Studio</span>
+          </a>
+          <p class="text-[10px] text-zinc-500 font-light tracking-wider uppercase pt-4">
+            Responsável Técnico:<br>
+            Dra. Helena Cavalcanti<br>
+            CRO-SP 123.456
+          </p>
+        </div>
+
+        <!-- Horários e Endereço -->
+        <div class="flex flex-col space-y-4">
+          <h4 class="text-xs uppercase tracking-widest text-gold-400 font-light">Atendimento Restrito</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed font-light">
+            Segunda a Sexta — 09:00 às 18:00<br>
+            <span class="text-gold-400/80 font-light italic">Estritamente sob agendamento prévio.</span>
+          </p>
+          <p class="text-xs text-zinc-500 font-light">
+            Av. Brigadeiro Faria Lima, 4500<br>
+            Itaim Bibi — São Paulo, SP
+          </p>
+        </div>
+
+        <!-- Links Rápidos -->
+        <div class="flex flex-col space-y-3 text-xs tracking-widest uppercase font-light text-zinc-400">
+          <h4 class="text-xs uppercase tracking-widest text-gold-400 font-light mb-1">Navegação</h4>
+          <a href="#tecnologia" class="hover:text-zinc-100 transition-colors">Tecnologia</a>
+          <a href="#tratamentos" class="hover:text-zinc-100 transition-colors">Assinatura</a>
+          <a href="#especialista" class="hover:text-zinc-100 transition-colors">O Especialista</a>
+          <a href="#depoimentos" class="hover:text-zinc-100 transition-colors">Experiência VIP</a>
+        </div>
+
+        <!-- Redes Sociais e Contato -->
+        <div class="flex flex-col space-y-4">
+          <h4 class="text-xs uppercase tracking-widest text-gold-400 font-light">Contato VIP</h4>
+          <p class="text-xs text-zinc-400 font-light">
+            concierge@auradental.com.br<br>
+            +55 (11) 99999-8888
+          </p>
+          <!-- Ícones Sociais Minimalistas -->
+          <div class="flex space-x-4 pt-2">
+            <a href="#" aria-label="Instagram" class="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center text-zinc-400 hover:text-gold-400 hover:border-gold-400/30 transition-all duration-500">
+              <i data-lucide="instagram" class="w-4 h-4 stroke-[1.2]"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center text-zinc-400 hover:text-gold-400 hover:border-gold-400/30 transition-all duration-500">
+              <i data-lucide="linkedin" class="w-4 h-4 stroke-[1.2]"></i>
+            </a>
+            <a href="#" aria-label="YouTube" class="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center text-zinc-400 hover:text-gold-400 hover:border-gold-400/30 transition-all duration-500">
+              <i data-lucide="youtube" class="w-4 h-4 stroke-[1.2]"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Direitos Autorais e Políticas -->
+      <div class="flex flex-col sm:flex-row items-center justify-between pt-8 text-[10px] text-zinc-600 tracking-wider font-light uppercase">
+        <p>© 2026 AURA Dental Studio. Todos os direitos reservados.</p>
+        <div class="flex space-x-6 mt-4 sm:mt-0">
+          <a href="#" class="hover:text-zinc-400 transition-colors">Termos de Uso</a>
+          <a href="#" class="hover:text-zinc-400 transition-colors">Políticas de Privacidade</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Script para Interação Básica do Menu Celular -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Fechar menu mobile ao clicar em um link
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+
+  <!-- Script para carregar os ícones do Lucide -->
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
